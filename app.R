@@ -8,7 +8,7 @@
 #
 
 library(shiny)
-
+library(dplyr)
 library(xml2)
 library(tidyr)
 library(leaflet)
