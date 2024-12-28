@@ -1,16 +1,22 @@
-FROM rocker/shiny:latest
+FROM rocker/shiny-verse:4.3.2
 
-# Install system dependencies using install2.r
-RUN R -e "install.packages(c('curl', 'xml2', 'openssl'), repos='https://cloud.r-project.org/')"
+# Install R packages all at once to optimize build
+RUN R -e "install.packages(c(\
+    'shiny', \
+    'leaflet', \
+    'dplyr', \
+    'tidyr', \
+    'readr', \
+    'stringr' \
+    'xml2'
+    ), \
+    repos='https://cloud.r-project.org/', \
+    dependencies=TRUE)"
 
-# Install R packages
-RUN R -e "install.packages(c('shiny', 'dplyr', 'xml2', 'tidyr', 'leaflet'), repos='https://cloud.r-project.org/')"
-
-# Copy your app into the image
+# Copy your app and data
 COPY app.R /srv/shiny-server/
-COPY data/ /srv/shiny-server/data/  # if you have data files
+COPY data /srv/shiny-server/data
 
-# Make the app available at port 3838
 EXPOSE 3838
 
 CMD ["/usr/bin/shiny-server"]
