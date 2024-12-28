@@ -242,11 +242,11 @@ server <- function(input, output, session) {
 # Run the app
 shinyApp(ui = ui, server = server)
 
-readr::read_csv("PMW_locale_01a.csv") %>%
-  select(id, coordinate, name_deu) %>%
-  rename(name = name_deu) %>%
-  separate(coordinate, into = c("latitude", "longitude"), sep = ", ") %>%
-  View()
+#readr::read_csv("PMW_locale_01a.csv") %>%
+#  select(id, coordinate, name_deu) %>%
+#  rename(name = name_deu) %>%
+#  separate(coordinate, into = c("latitude", "longitude"), sep = ", ") %>%
+#  View()
 
 
 
