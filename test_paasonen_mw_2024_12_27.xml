@@ -5,11 +5,25 @@
 <lg>
 <lb iso_lang="myv"><l class="myv" has_segments="а+Pcle" hid="Hom1" id="E:1:Pcle:а"/>
 <l_var orig_var="a"><geoU geo_edit="_" geo_equal="_" orig_geo="E:allg." geo_src="HP" geo_truth="_"/></l_var>,
+<l_var orig_var="a"><geoU geo_edit="JMR:from ex" geo_equal="_" orig_geo="E:Hl" geo_src="HP" geo_truth="_"/></l_var>
+<l_var orig_var="a"><geoU geo_edit="JMR:from ex" geo_equal="_" orig_geo="E:Jeg" geo_src="HP" geo_truth="_"/></l_var>
+<l_var orig_var="a"><geoU geo_edit="JMR:from ex" geo_equal="_" orig_geo="E:Mar" geo_src="HP" geo_truth="_"/></l_var>
+<l_var orig_var="a"><geoU geo_edit="JMR:from ex" geo_equal="_" orig_geo="E:SŠant" geo_src="HP" geo_truth="_"/></l_var>
+<l_var orig_var="a"><geoU geo_edit="JMR:from ex" geo_equal="_" orig_geo="E:VVr" geo_src="HP" geo_truth="_"/></l_var>
 <l_var orig_var="at"><geoU geo_edit="_" geo_equal="_" orig_geo="E:Kal" geo_src="HP" geo_truth="_"/></l_var>
 <l_var orig_var="at"><geoU geo_edit="_" geo_equal="_" orig_geo="E:Kažl" geo_src="HP" geo_truth="_"/></l_var>
 </lb>
 <lb iso_lang="mdf"><l class="mdf" has_segments="аф+Pcle" id="M:1:Pcle:аф"/>
 <l_var orig_var="af"><geoU geo_edit="_" geo_equal="_" orig_geo="M:allg." geo_src="HP" geo_truth="_"/></l_var>
+<l_var orig_var="af"><geoU geo_edit="JMR:from ex" geo_equal="_" orig_geo="M:Kars" geo_src="HP" geo_truth="_"/></l_var>
+<l_var orig_var="af"><geoU geo_edit="JMR:from ex" geo_equal="_" orig_geo="M:Katm" geo_src="HP" geo_truth="_"/></l_var>
+<l_var orig_var="af"><geoU geo_edit="JMR:from ex" geo_equal="_" orig_geo="M:Kr" geo_src="HP" geo_truth="_"/></l_var>
+<l_var orig_var="af"><geoU geo_edit="JMR:from ex" geo_equal="_" orig_geo="M:Kul" geo_src="HP" geo_truth="_"/></l_var>
+<l_var orig_var="af"><geoU geo_edit="JMR:from ex" geo_equal="_" orig_geo="M:Lemd" geo_src="HP" geo_truth="_"/></l_var>
+<l_var orig_var="af"><geoU geo_edit="JMR:from ex" geo_equal="_" orig_geo="M:P" geo_src="HP" geo_truth="_"/></l_var>
+<l_var orig_var="af"><geoU geo_edit="JMR:from ex" geo_equal="_" orig_geo="M:Patra" geo_src="HP" geo_truth="_"/></l_var>
+<l_var orig_var="af"><geoU geo_edit="JMR:from ex" geo_equal="_" orig_geo="M:Pš" geo_src="HP" geo_truth="_"/></l_var>
+<l_var orig_var="af"><geoU geo_edit="JMR:from ex" geo_equal="_" orig_geo="M:Saz" geo_src="HP" geo_truth="_"/></l_var>
 </lb></lg>
 <mg><sense><tg iso_lang="rus"><t pos="Pcle" src="MK">не</t></tg>/
 <tg iso_lang="deu"><t pos="Pcle">nicht</t></tg></sense>;</mg>
