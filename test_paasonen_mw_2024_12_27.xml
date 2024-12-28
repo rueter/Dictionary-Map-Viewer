@@ -1,8 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Heikki Paasonens Mordwinisches Wörterbuch, I, II, III, IV test words 01-->
 <r iso_lang="myv">
+<e><p isa="parent">
+<lg>
+<lb iso_lang="myv"><l class="myv" has_segments="а+Pcle" hid="Hom1" id="E:1:Pcle:а"/>
+<l_var orig_var="a"><geoU geo_edit="_" geo_equal="_" orig_geo="E:allg." geo_src="HP" geo_truth="_"/></l_var>,
+<l_var orig_var="at"><geoU geo_edit="_" geo_equal="_" orig_geo="E:Kal" geo_src="HP" geo_truth="_"/></l_var>
+<l_var orig_var="at"><geoU geo_edit="_" geo_equal="_" orig_geo="E:Kažl" geo_src="HP" geo_truth="_"/></l_var>
+</lb>
+<lb iso_lang="mdf"><l class="mdf" has_segments="аф+Pcle" id="M:1:Pcle:аф"/>
+<l_var orig_var="af"><geoU geo_edit="_" geo_equal="_" orig_geo="M:allg." geo_src="HP" geo_truth="_"/></l_var>
+</lb></lg>
+<mg><sense><tg iso_lang="rus"><t pos="Pcle" src="MK">не</t></tg>/
+<tg iso_lang="deu"><t pos="Pcle">nicht</t></tg></sense>;</mg>
+<mg><sense><tg iso_lang="rus"><t pos="Pref" src="MK">не‑</t></tg>/
+<tg iso_lang="deu"><t pos="Pref">un- [kommt auch in der negat. Konjug. des Verbs im Präs., im Ers. mundartlich auch im Desiderativ und Kond. als unkonjugiertes Vern.-Wort vor]</t></tg>.</sense>
+<xg><xb><x><i>vaj, si͔ŕe nogaj, a jutko</i></x><geoU geo_edit="_" geo_equal="_" orig_geo="E:Mar" geo_src="HP" geo_truth="_"/><lit_ref edit="_" lit_ref=":1:74:_:" iso_lang="_"/></xb><xt iso_lang="deu">O, alter Nogajer, (ich habe) keine Zeit.</xt></xg>
+<xg><xb><x><i>a se͔ŕejńe, uŕakaj, a ḱeĺejńe</i></x><geoU geo_edit="_" geo_equal="_" orig_geo="E:Mar" geo_src="HP" geo_truth="_"/><lit_ref edit="_" lit_ref=":1:16:_:" iso_lang="_"/></xb><xt iso_lang="deu">[Sie (die Birke) ist] nicht hoch, Schwägerin, nicht breit.</xt></xg>
+<xg><xb><x><i>ťeťe on̄ne͔ś, pari͔jakaj, son a b́eŕeń</i></x><geoU geo_edit="_" geo_equal="_" orig_geo="E:Mar" geo_src="HP" geo_truth="_"/><lit_ref edit="_" lit_ref=":1:18:_:" iso_lang="_"/></xb><xt iso_lang="deu">Dieser Traum, Schwägerin, er hat keine schlechte Bedeutung (eig.: ist nicht schlecht).</xt></xg>
+<xg><xb><x><i>a śuroń kuvalt son śupav</i></x><geoU geo_edit="_" geo_equal="_" orig_geo="E:Mar" geo_src="HP" geo_truth="_"/><lit_ref edit="_" lit_ref=":1:46:_:" iso_lang="_"/></xb><xt iso_lang="deu">Nicht an Getreide ist er reich.</xt></xg>
+<xg><xb><x><i>son b́eźḿeńďe a b́eźḿeń</i></x><geoU geo_edit="_" geo_equal="_" orig_geo="E:Mar" geo_src="HP" geo_truth="_"/><lit_ref edit="_" lit_ref=":2:55:_:" iso_lang="_"/></xb><xt iso_lang="deu">Eine Schnellwaage ist es freilich nicht.</xt></xg>
+<xg><xb><x><i>[ḿińeḱ] mastorco a v́iďiť soḱiť</i></x><geoU geo_edit="_" geo_equal="_" orig_geo="E:Mar" geo_src="HP" geo_truth="_"/><lit_ref edit="_" lit_ref=":1:34:_:" iso_lang="_"/></xb><xt iso_lang="deu">In unserem Lande säet man nicht, pflügt man nicht.</xt></xg>
+<xg><xb><x><i>[śeĺḿe] ńeji, ḱeď a sati͔</i></x><geoU geo_edit="_" geo_equal="_" orig_geo="E:Mar" geo_src="HP" geo_truth="_"/><lit_ref edit="_" lit_ref=":1:234:_:" iso_lang="_"/></xb><xt iso_lang="deu">Das Auge sieht, (aber) die Hand reicht nicht hinan [so weit].</xt></xg>
+<xg><xb><x><i>oᵪ moń a uĺiť śeĺv́eďiń ńejićam</i></x><geoU geo_edit="_" geo_equal="_" orig_geo="E:Mar" geo_src="HP" geo_truth="_"/><lit_ref edit="_" lit_ref=":1:212:_:" iso_lang="_"/></xb><xt iso_lang="deu">O, es wird keinen geben [ich werde keinen haben], der meine Tränen sähe [sieht].</xt></xg>
+<xg><xb><x><i>[ḿeŕat], a [ḿeŕat], ĺeĺakaj, ton svaᵪa [ḿeĺga] moĺemďe</i></x><geoU geo_edit="_" geo_equal="_" orig_geo="E:Mar" geo_src="HP" geo_truth="_"/><lit_ref edit="_" lit_ref=":1:110:_:" iso_lang="_"/></xb><xt iso_lang="deu">Gebietest du oder nicht, Brüderchen, nach [zu] der Freiwerberin zu fahren?</xt></xg>
+<xg><xb><x><i>[ḿeks] a targasa kurgo poco vaĺǵejem</i></x><geoU geo_edit="_" geo_equal="_" orig_geo="E:Mar" geo_src="HP" geo_truth="_"/><lit_ref edit="_" lit_ref=":1:210:_:" iso_lang="_"/></xb><xt iso_lang="deu">Warum lasse ich nicht des Mundes Stimme tönen?</xt></xg>
+<xg><xb><x><i>buďi a ṕev́eŕci͔ť, koŕenom targatan</i></x><geoU geo_edit="_" geo_equal="_" orig_geo="E:Mar" geo_src="HP" geo_truth="_"/><lit_ref edit="_" lit_ref=":2:9:_:" iso_lang="_"/></xb><xt iso_lang="deu">Falls du sie [die Würmer] nicht abschütteln wirst, mit der Wurzel werde ich dich ausreissen. – Der Löffel.</xt></xg>
+<xg><xb><x><i>lomań ormańť ḱijak a ḱemsi͔</i></x><geoU geo_edit="_" geo_equal="_" orig_geo="E:Mar" geo_src="HP" geo_truth="_"/><lit_ref edit="_" lit_ref=":2:78:_:" iso_lang="_"/></xb><xt iso_lang="deu">An die Krankheit eines anderen glaubt niemand.</xt></xg>
+<xg><xb><x><i>a buďimks a jovti͔ńďeŕat, to ḿiń ṕŕat ḱeŕasi͔ńeḱ</i></x><geoU geo_edit="_" geo_equal="_" orig_geo="E:Mar" geo_src="HP" geo_truth="_"/><lit_ref edit="_" lit_ref=":2:89:_:" iso_lang="_"/></xb><xt iso_lang="deu">Falls du aber nicht (so) meldest, werden wir deinen Kopf abhauen [dir den Kopf abhauen].</xt></xg>
+<xg><xb><x><i>potom čarkuć što eťe a ńize͔</i></x><geoU geo_edit="_" geo_equal="_" orig_geo="E:VVr" geo_src="HP" geo_truth="_"/><lit_ref edit="_" lit_ref=":III:291:_:" iso_lang="_"/></xb><xt iso_lang="deu">Dann merkte er, dass dies nicht seine Frau war.</xt></xg>
+<xg><xb><x><i>a tońďeďeť avaŕďan</i></x><geoU geo_edit="_" geo_equal="_" orig_geo="E:Hl" geo_src="HP" geo_truth="_"/><lit_ref edit="_" lit_ref=":1:160:_:" iso_lang="_"/></xb><xt iso_lang="deu">Nicht du bist schuld, dass ich weine.</xt></xg>
+<xg><xb><x><i>[ḿeks] a puftasak [ḿiŕďiť] ṕeńeŕva?</i></x><geoU geo_edit="_" geo_equal="_" orig_geo="E:Hl" geo_src="HP" geo_truth="_"/><lit_ref edit="_" lit_ref=":1:82:_:" iso_lang="_"/></xb><xt iso_lang="deu">Warum weckst du nicht, Schwägerin, deinen Mann auf?</xt></xg>
+<xg><xb><x><i>mon koda· ťeja·n, mon a avaŕďan?</i></x><geoU geo_edit="_" geo_equal="_" orig_geo="E:Jeg" geo_src="HP" geo_truth="_"/><lit_ref edit="_" lit_ref=":1:102:_:" iso_lang="_"/></xb><xt iso_lang="deu">Wie sollte ich denn nicht weinen [Was soll ich tun, um nicht zu weinen]?</xt></xg>
+<xg><xb><x><i>ťiń at śťa joftada</i></x><geoU geo_edit="_" geo_equal="_" orig_geo="E:Kal" geo_src="HP" geo_truth="_"/><lit_ref edit="_" lit_ref=":2:135:_:" iso_lang="_"/></xb><xt iso_lang="deu">Antwortet nicht also [so].</xt></xg>
+<xg><xb><x><i>esi͔nze͔ ḱijak at eŕe</i></x><geoU geo_edit="_" geo_equal="_" orig_geo="E:Kal" geo_src="HP" geo_truth="_"/><lit_ref edit="_" lit_ref=":2:128:_:" iso_lang="_"/></xb><xt iso_lang="deu">Darin wohnt niemand.</xt></xg>
+<xg><xb><x><i>at ṕeĺďama</i></x><geoU geo_edit="_" geo_equal="_" orig_geo="E:Kal" geo_src="HP" geo_truth="_"/><lit_ref edit="_" lit_ref=":2:130:_:" iso_lang="_"/></xb><xt iso_lang="deu">Wir fürchten [uns] nicht.</xt></xg>
+<xg><xb><x><i>orgućť si͔ń at soci͔ń kov</i></x><geoU geo_edit="_" geo_equal="_" orig_geo="E:Kal" geo_src="HP" geo_truth="_"/><lit_ref edit="_" lit_ref=":2:130:_:" iso_lang="_"/></xb><xt iso_lang="deu">Sie flohen, ich weiss nicht wohin.</xt></xg>
+<xg><xb><x><i>ťeńi moń at ḱeĺǵiťńisamak</i></x><geoU geo_edit="_" geo_equal="_" orig_geo="E:Kal" geo_src="HP" geo_truth="_"/><lit_ref edit="_" lit_ref=":2:147:_:" iso_lang="_"/></xb>,
+<xb><x><i>ťäńi moń at ḱeĺǵᴉńᴉsamak</i></x><geoU geo_edit="_" geo_equal="_" orig_geo="E:Kažl" geo_src="HP" geo_truth="_"/><lit_ref edit="_" lit_ref=":2:148:_:" iso_lang="_"/></xb><xt iso_lang="deu">Jetzt wirst du mich nicht betrügen.</xt></xg>
+<xg><xb><x><i>ćuť, at kažnᴉ͐j čińďi jakaśť ťänza jarʿcama sodamᴉ͐za śťiŕᴉnza marʿta</i></x><geoU geo_edit="_" geo_equal="_" orig_geo="E:Kažl" geo_src="HP" geo_truth="_"/><lit_ref edit="_" lit_ref=":2:149:_:" iso_lang="_"/></xb><xt iso_lang="deu">Beinahe jeden Tag kommen [kamen] Tochter und Schwiegersohn zu ihm, um zu essen.</xt></xg>
+<xg><xb><x><i>at sodasa mon</i></x><geoU geo_edit="_" geo_equal="_" orig_geo="E:Kažl" geo_src="HP" geo_truth="_"/><lit_ref edit="_" lit_ref=":2:150:_:" iso_lang="_"/></xb><xt iso_lang="deu">Ich weiss [es] nicht.</xt></xg>
+<xg><xb><x><i>[at kunda·saḿiź]</i></x><geoU geo_edit="_" geo_equal="_" orig_geo="E:Kažl" geo_src="HP" geo_truth="_"/><lit_ref edit="_" lit_ref=":III:232:_:" iso_lang="_"/></xb><xt iso_lang="deu">Sie wird uns nicht fassen.</xt></xg>
+<xg><xb><x><i>ḱijä af ḱijä soń maŕäźä</i></x><geoU geo_edit="_" geo_equal="_" orig_geo="M:Kul" geo_src="HP" geo_truth="_"/><lit_ref edit="_" lit_ref=":IV:48:_:" iso_lang="_"/></xb><xt iso_lang="deu">Wer könnte es sein, der sie vernahm?</xt></xg>
+<xg><xb><x><i>af ťäďäŋḱä[-]avańḱä</i></x><geoU geo_edit="_" geo_equal="_" orig_geo="M:Pš" geo_src="HP" geo_truth="_"/><lit_ref edit="_" lit_ref=":IV:165:_:" iso_lang="_"/></xb><xt iso_lang="deu">Sie ist nicht unsere Mutter.</xt></xg>
+<xg><xb><x><i>moń af aĺäźä, moń af tŕäjńäźä</i></x><geoU geo_edit="_" geo_equal="_" orig_geo="M:Kr" geo_src="HP" geo_truth="_"/><lit_ref edit="_" lit_ref=":IV:230:_:" iso_lang="_"/></xb><xt iso_lang="deu">Für mich ist er kein Vater, für mich ist er kein Ernährer.</xt></xg>
+<xg><xb><x><i>af vaśäźat polaźat</i></x><geoU geo_edit="_" geo_equal="_" orig_geo="M:Kul" geo_src="HP" geo_truth="_"/><lit_ref edit="_" lit_ref=":IV:49:_:" iso_lang="_"/></xb><xt iso_lang="deu">Du bist nicht mein Ehemann.</xt></xg>
+<xg><xb><x><i>ḿiŕťť[‑]əŕva·t eŕäšť af fḱä jońńasa</i></x><geoU geo_edit="_" geo_equal="_" orig_geo="M:Patra" geo_src="HP" geo_truth="_"/><lit_ref edit="_" lit_ref=":IV:59:_:" iso_lang="_"/></xb><xt iso_lang="deu">Der Mann und die Frau leben nicht in Eintracht.</xt></xg>
+<xg><xb><x><i>vaj udə̑ś udə̑ś af kə̑rža·s lamə̑s</i></x><geoU geo_edit="_" geo_equal="_" orig_geo="M:Pš" geo_src="HP" geo_truth="_"/><lit_ref edit="_" lit_ref=":IV:122:_:" iso_lang="_"/></xb><xt iso_lang="deu">Sie schlief und schlief eine Zeitlang.</xt></xg>
+<xg><xb><x><i>af vaśäńäćä eŕäv́i</i></x><geoU geo_edit="_" geo_equal="_" orig_geo="M:Patra" geo_src="HP" geo_truth="_"/><lit_ref edit="_" lit_ref=":IV:24:_:" iso_lang="_"/></xb><xt iso_lang="deu">Deine Frau wollen wir nicht.</xt></xg>
+<xg><xb><x><i>kona kormaś af ḱeĺǵəv́i, v́isca af andə̑van</i></x><geoU geo_edit="_" geo_equal="_" orig_geo="M:P" geo_src="MK" geo_truth="_"/><lit_ref edit="_" lit_ref=":IV:697:_:" iso_lang="_"/></xb><xt iso_lang="deu">Die Speise, die ich nicht mag, kann mir nicht mit Gewalt zu essen gegeben werden.</xt></xg>
+<xg><xb><x><i>toŋga mońťfťəmə̑n meź(ə)və̑k af ťija·t!</i></x><geoU geo_edit="_" geo_equal="_" orig_geo="M:Pš" geo_src="HP" geo_truth="_"/><lit_ref edit="_" lit_ref=":IV:19:_:" iso_lang="_"/></xb><xt iso_lang="deu">Auch du bist ohne mich nichts wert.</xt></xg>
+<xg><xb><x><i>vaj af ḱeĺgəńďan tatarń ćorada</i></x><geoU geo_edit="_" geo_equal="_" orig_geo="M:Kars" geo_src="HP" geo_truth="_"/><lit_ref edit="_" lit_ref=":IV:209:_:" iso_lang="_"/></xb><xt iso_lang="deu">Ach, ich liebe nicht Tataren.</xt></xg>
+<xg><xb><x><i>koda af avaŕďan</i></x><geoU geo_edit="_" geo_equal="_" orig_geo="M:Kars" geo_src="HP" geo_truth="_"/><lit_ref edit="_" lit_ref=":IV:242:_:" iso_lang="_"/></xb><xt iso_lang="deu">Wie sollte ich nicht weinen.</xt></xg>
+<xg><xb><x><i>af śäfťä</i></x><geoU geo_edit="_" geo_equal="_" orig_geo="M:Lemd" geo_src="HP" geo_truth="_"/><lit_ref edit="_" lit_ref=":IV:71:_:" iso_lang="_"/></xb><xt iso_lang="deu">Ich nehme dich nicht [Ich verheirate mich nicht mit dir].</xt></xg>
+<xg><xb><x><i>mäŕksak, af mə̑rda·fcak, śeĺksak, af nolasak</i></x><geoU geo_edit="_" geo_equal="_" orig_geo="M:P" geo_src="HP" geo_truth="_"/><lit_ref edit="_" lit_ref=":IV:700:_:" iso_lang="_"/></xb><xt iso_lang="deu">Was du sagst, kannst du nicht zurücknehmen, was du ausspeist, kannst du nicht lecken.</xt></xg>
+<xg><xb><x><i>pə̑zga·taś śiśəmkśť v́eĺəť jotasi͔, a [ḱiźəf́ťḱ] məźara af sodasi͔</i></x><geoU geo_edit="_" geo_equal="_" orig_geo="M:P" geo_src="HP" geo_truth="_"/><lit_ref edit="_" lit_ref=":IV:703:_:" iso_lang="_"/></xb><xt iso_lang="deu">Die Schwalbe fliegt siebenmal am Dorfe vorbei, aber fragst du sie (was), so weiss sie nichts (über das Dorf).</xt></xg>
+<xg><xb><x><i>af soci͔ koda ajə̑rdi͔</i></x><geoU geo_edit="_" geo_equal="_" orig_geo="M:Katm" geo_src="HP" geo_truth="_"/><lit_ref edit="_" lit_ref=":IV:254:_:" iso_lang="_"/></xb><xt iso_lang="deu">Sie weiss nicht, wie sie loskommen könnte.</xt></xg>
+<xg> – In russ. Art gebraucht: <xb><x><i>kona a juti͔, avaŕďeḿe karḿi</i></x><geoU geo_edit="_" geo_equal="_" orig_geo="E:Mar" geo_src="HP" geo_truth="_"/><lit_ref edit="_" lit_ref=":2:49:_:" iso_lang="_"/></xb><xt iso_lang="deu">Wer auch vorübergehen mag, beginnt zu weinen.</xt></xg>
+<xg><xb><x><i>źaro a v́ešiť ton ńej pant</i></x><geoU geo_edit="_" geo_equal="_" orig_geo="E:SŠant" geo_src="HP" geo_truth="_"/><lit_ref edit="_" lit_ref=":I:6:_:" iso_lang="_"/></xb><xt iso_lang="deu">Wieviel sie auch verlangen mögen, zahle [bezahle]!</xt></xg>
+<xg><xb><x><i>kodak son iŕiďe, ḿeśť at karḿe ťejńiḿe, ḿeśť at karḿe korʿtama, ton ĺa drožak!</i></x><geoU geo_edit="_" geo_equal="_" orig_geo="E:Kal" geo_src="HP" geo_truth="_"/><lit_ref edit="_" lit_ref=":2:136:_:" iso_lang="_"/></xb><xt iso_lang="deu">Was er auch anfangen wird zu sprechen und was er auch anfangen wird zu tun, wenn er berauscht ist, schweige du nur und rühre dich nicht!</xt></xg>
+<xg><xb><x><i>ṕiŕǵiḿ(e) [ińazurś], kost(a) at ńije stada, ḱev́śńisi͔nze͔</i></x><geoU geo_edit="_" geo_equal="_" orig_geo="E:Kal" geo_src="HP" geo_truth="_"/><lit_ref edit="_" lit_ref=":2:136:_:" iso_lang="_"/></xb><xt iso_lang="deu">Da fragt Fürst Pirgime, sowie [sobald, wo immer, wann immer] er eine Herde sieht.</xt></xg>
+<xg><xb><x><i>koda a si͔</i></x><geoU geo_edit="_" geo_equal="_" orig_geo="E:" geo_src="MK" geo_truth="_"/></xb><xt iso_lang="deu">Wann immer er auch kommen mag.</xt></xg>
+<xg><xb><x><i>koda at sä͔ śťiŕś si͔nst, valda ob́e·d ṕiŋksta sä͔</i></x><geoU geo_edit="_" geo_equal="_" orig_geo="E:Kažl" geo_src="HP" geo_truth="_"/><lit_ref edit="_" lit_ref=":2:149:_:" iso_lang="_"/></xb><xt iso_lang="deu">Und wann sie [die Tochter] auch angelaufen kommt, immer ist es um die Mittagszeit.</xt></xg>
+<xg><xb><x><i>kov a</i> (<i>moĺi, tuji</i>, ‒‒‒)</x> <geoU geo_edit="_" geo_equal="_" orig_geo="E:" geo_src="MK" geo_truth="_"/></xb> <xt iso_lang="deu">Wohin er auch (geht, sich begibt u. dgl.).</xt></xg>
+<xg><xb><x><i>koda af [ḿäŕǵi], ťak ĺišťä</i></x><geoU geo_edit="_" geo_equal="_" orig_geo="M:P" geo_src="HP" geo_truth="_"/></xb><xt iso_lang="deu">Wie er auch fordern mag, bringe es nicht hervor (heraus u. dgl.).</xt></xg>
+<xg><xb><x><i>arʿta [ḱi] af [uĺi], arʿta pańtška [ťeenza] ortať</i></x><geoU geo_edit="_" geo_equal="_" orig_geo="M:Kr" geo_src="HP" geo_truth="_"/><lit_ref edit="_" lit_ref=":IV:129:_:" iso_lang="_"/></xb><xt iso_lang="deu">Geh, wer er auch immer sein mag, geh, und öffne ihm das Tor!</xt></xg>
+<xg><xb><x><i>kod(a) af uĺi [aŕšu] śəstra·j avaŕďan</i></x><geoU geo_edit="_" geo_equal="_" orig_geo="M:Saz" geo_src="HP" geo_truth="_"/><lit_ref edit="_" lit_ref=":IV:373:_:" iso_lang="_"/></xb><xt iso_lang="deu">Warum sollte ich nicht weinen [lieber doch: Wie es auch sein mag, ich weine], Schwester Arjschu.</xt></xg></mg></p></e>
 <e><p isa="parent" hid="1">
-<lg><lb iso_lang="myv"><l class="myv" has_segments="_" id="E:1:N+Sg+Nom+Indef:кедь"/>
+<lg><lb iso_lang="myv"><l class="myv" has_segments="кедь+Hom1+N+Sg+Nom+Indef" id="E:1:N+Sg+Nom+Indef:кедь"/>
 <l_var orig_var="ḱeď"><lit_ref edit="_" lit_ref="Chr" iso_lang="myv"/></l_var>
 <l_var orig_var="ḱeď"><geoU geo_edit="_" geo_equal="_" orig_geo="E:Mar" geo_src="HP" geo_truth="_"/></l_var>
 <l_var orig_var="ḱeď"><geoU geo_edit="_" geo_equal="_" orig_geo="E:Hl" geo_src="HP" geo_truth="_"/></l_var>
@@ -12,7 +77,7 @@
 <l_var orig_var="ḱeď"><geoU geo_edit="_" geo_equal="_" orig_geo="E:Kažl" geo_src="HP" geo_truth="_"/></l_var>
 <l_var orig_var="ḱeď"><geoU geo_edit="_" geo_equal="_" orig_geo="E:Petr" geo_src="HP" geo_truth="_"/></l_var>
 </lb>
-<lb iso_lang="mdf"><l class="mdf" has_segments="_" id="M:1:N+Sg+Nom+Indef:кядь"/>
+<lb iso_lang="mdf"><l class="mdf" has_segments="кядь+N+Sg+Nom+Indef" id="M:1:N+Sg+Nom+Indef:кядь"/>
 <l_var orig_var="ḱɛď"><lit_ref edit="_" lit_ref="Chr" iso_lang="mdf"/></l_var>,
 <l_var orig_var="ḱäď"><geoU geo_edit="_" geo_equal="_" orig_geo="M:P" geo_src="HP" geo_truth="_"/></l_var>
 <l_var orig_var="ḱäď"><geoU geo_edit="_" geo_equal="_" orig_geo="M:Sel" geo_src="HP" geo_truth="_"/></l_var>
@@ -75,7 +140,7 @@
 <l_var orig_var="imbuĺa·v"><geoU geo_edit="_" geo_equal="_" orig_geo="E:VVr" geo_src="HP" geo_truth="_"/></l_var>,
 <l_var orig_var="ḿila·v"><geoU geo_edit="_" geo_equal="_" orig_geo="E:Nask" geo_src="HP" geo_truth="_"/></l_var>
 </lb>
-<lb iso_lang="mdf"><l class="mdf" has_segments="мелав+N+Sg+Nom+Indef" id="M:1::мелав+N+Sg+Nom+Indef"/>
+<lb iso_lang="mdf"><l class="mdf" has_segments="мелав+N+Sg+Nom+Indef" id="M:1:N+Sg+Nom+Indef:мелав"/>
 <l_var orig_var="ḿelav" src="Bars."><geoU geo_edit="_" geo_equal="_" orig_geo="M:P" geo_src="HP" geo_truth="_"/></l_var>
 <l_var orig_var="ḿelu" src="Bars."><geoU geo_edit="_" geo_equal="_" orig_geo="M:P" geo_src="HP" geo_truth="_"/></l_var>
 <l_var orig_var="ḿilav" src="Bars."><geoU geo_edit="_" geo_equal="_" orig_geo="M:P" geo_src="HP" geo_truth="_"/></l_var>
@@ -107,7 +172,7 @@
 <l_var orig_var="ḱeď-ḿiḿiĺav"><geoU geo_edit="_" geo_equal="_" orig_geo="E:Is" geo_src="HP" geo_truth="_"/></l_var>,
 <l_var orig_var="ḱeď-ḿiĺav"><geoU geo_edit="_" geo_equal="_" orig_geo="E:Nask" geo_src="HP" geo_truth="_"/></l_var>
 </lb>
-<lb iso_lang="mdf"><l class="mdf" has_segments="_" id="M:1::кедь-миляв ~ кедь-мəляв"/>
+<lb iso_lang="mdf"><l class="mdf" has_segments="кедь+N+Sg+Nom+Indef|мелав+N+Sg+Nom+Indef" id="M:1:N+Sg+Nom+Indef:кедь-мелав"/>
 <l_var orig_var="ḱeď-ḿiĺa·v"><geoU geo_edit="_" geo_equal="_" orig_geo="M:Sučk" geo_src="HP" geo_truth="_"/></l_var>
 <l_var orig_var="ḱeď-məĺa·v"><geoU geo_edit="_" geo_equal="_" orig_geo="M:Sučk" geo_src="HP" geo_truth="_"/></l_var>,
 <l_var orig_var="ḱeď-ḿiĺa·u̯"><geoU geo_edit="_" geo_equal="_" orig_geo="M:Ur" geo_src="HP" geo_truth="_"/></l_var>,
