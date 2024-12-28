@@ -7,7 +7,7 @@ RUN apt-get update && apt-get install -y \
     libssl-dev
 
 # Install R packages
-RUN R -e "install.packages(c('shiny', 'other-packages-you-need'), repos='https://cloud.r-project.org/')"
+RUN R -e "install.packages(c('shiny', 'dplyr', 'xml2', 'tidyr', 'leaflet'), repos='https://cloud.r-project.org/')"
 
 # Copy your app into the image
 COPY app.R /srv/shiny-server/
