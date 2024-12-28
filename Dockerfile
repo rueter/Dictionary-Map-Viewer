@@ -15,7 +15,7 @@ RUN R -e "install.packages(c(\
 
 # Copy your app and data
 COPY app.R /srv/shiny-server/
-COPY data /srv/shiny-server/data
+#COPY data /srv/shiny-server/data
 
 EXPOSE 3838
 
