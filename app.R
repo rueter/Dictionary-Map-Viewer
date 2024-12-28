@@ -11,7 +11,16 @@ library(tidyr)
 library(leaflet)
 
 # Read the XML file
-xml_data <- read_xml("data/test_paasonen_mw_2024_12_27.xml")
+#xml_data <- read_xml("data/test_paasonen_mw_2024_12_27.xml")
+
+# Add error handling for URL access
+tryCatch({
+  xml_data <- read_xml("https://raw.githubusercontent.com/rueter/Dictionary-Map-Viewer/refs/heads/main/data/test_paasonen_mw_2024_12_27.xml")
+}, error = function(e) {
+  # Log the error and provide a user-friendly message
+  message("Error loading XML data: ", e$message)
+  # You might want to return a default/empty XML or stop the app gracefully
+})
 
 # Function to safely extract text from nodes
 safe_text <- function(node) {
@@ -112,7 +121,15 @@ final_df <- final_df %>%
 # View the result
 # View(as_tibble(final_df))
 
-location_lookup <- readr::read_csv("data/PMW_locale_01a.csv") %>%
+tryCatch({
+  map_coordinates <- readr::read_csv("https://raw.githubusercontent.com/rueter/Dictionary-Map-Viewer/refs/heads/main/data/PMW_locale_01a.csv",
+                              show_col_types = FALSE)
+}, error = function(e) {
+  message("Error loading CSV data: ", e$message)
+  # Handle the error appropriately
+})
+
+location_lookup <- map_coordinates %>%
   select(id, coordinate, name_deu) %>%
   rename(name = name_deu) %>%
   separate(coordinate, into = c("latitude", "longitude"), sep = ", ") %>%
