@@ -7,7 +7,7 @@ RUN R -e "install.packages(c(\
     'dplyr', \
     'tidyr', \
     'readr', \
-    'stringr' \
+    'stringr', \
     'xml2'
     ), \
     repos='https://cloud.r-project.org/', \
