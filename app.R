@@ -14,7 +14,7 @@ library(tidyr)
 library(leaflet)
 
 # Read the XML file
-xml_data <- read_xml("../test_paasonen_mw_2024_12_27.xml")
+xml_data <- read_xml("test_paasonen_mw_2024_12_27.xml")
 
 # Function to safely extract text from nodes
 safe_text <- function(node) {
@@ -115,7 +115,7 @@ final_df <- final_df %>%
 # View the result
 # View(as_tibble(final_df))
 
-location_lookup <- readr::read_csv("../PMW_locale_01a.csv") %>%
+location_lookup <- readr::read_csv("PMW_locale_01a.csv") %>%
   select(id, coordinate, name_deu) %>%
   rename(name = name_deu) %>%
   separate(coordinate, into = c("latitude", "longitude"), sep = ", ") %>%
@@ -242,7 +242,7 @@ server <- function(input, output, session) {
 # Run the app
 shinyApp(ui = ui, server = server)
 
-readr::read_csv("../PMW_locale_01a.csv") %>%
+readr::read_csv("PMW_locale_01a.csv") %>%
   select(id, coordinate, name_deu) %>%
   rename(name = name_deu) %>%
   separate(coordinate, into = c("latitude", "longitude"), sep = ", ") %>%
