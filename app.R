@@ -1,11 +1,8 @@
 #
 # This is a Shiny web application. You can run the application by clicking
-# the 'Run App' button above.
+# the 'Run App' button above when the project is opened in RStudio.
 #
-# Find out more about building applications with Shiny here:
-#
-#    https://shiny.posit.co/
-#
+# This app has been developed by Niko Partanen and Jack Rueter. 
 
 library(shiny)
 library(dplyr)
@@ -14,7 +11,7 @@ library(tidyr)
 library(leaflet)
 
 # Read the XML file
-xml_data <- read_xml("test_paasonen_mw_2024_12_27.xml")
+xml_data <- read_xml("data/test_paasonen_mw_2024_12_27.xml")
 
 # Function to safely extract text from nodes
 safe_text <- function(node) {
@@ -115,7 +112,7 @@ final_df <- final_df %>%
 # View the result
 # View(as_tibble(final_df))
 
-location_lookup <- readr::read_csv("PMW_locale_01a.csv") %>%
+location_lookup <- readr::read_csv("data/PMW_locale_01a.csv") %>%
   select(id, coordinate, name_deu) %>%
   rename(name = name_deu) %>%
   separate(coordinate, into = c("latitude", "longitude"), sep = ", ") %>%
@@ -141,24 +138,32 @@ df <- final_df %>%
 ui <- fluidPage(
   titlePanel("Mordvin Dialect Map"),
   
-  sidebarLayout(
-    sidebarPanel(
-      # Dropdown to select German translation
-      selectInput("german_word",
-                  "Select German Translation:",
-                  choices = unique(df$german_translation)),
+  div(class = "row",
+      # Left column containing sidebarPanel and the additional info
+      div(class = "col-sm-4",
+          # Original sidebar content
+          div(class = "well",
+              selectInput("german_word",
+                          "Select German Translation:",
+                          choices = unique(df$german_translation)),
+              htmlOutput("variant_info")
+          ),
+          # Additional info panel
+          div(class = "well",
+              HTML("<h4>Additional Information</h4>
+                   <p>This application has been developed by Niko Partanen and Jack Rueter. The application can be extended to display geographic variants of different terms on different languages.</p>
+                   <p>It is part of the Finno-Ugrian Society's digitization work with the goal of making dialect dictionaries on Uralic languages more accessible online. It also connects to the Uralic-Amazonian collaboration coordinated by professors Pirjo Kristiina Virtanen (University of Helsinki), Sidney Facundes (Federal University of Pará (UFPA), Belém) and Thiago Cardoso Mota (Federal University of Amazonas, Manaus).</p>")
+          )
+      ),
       
-      # Display information about selected variants
-      htmlOutput("variant_info")
-    ),
-    
-    mainPanel(
-      # Leaflet map
-      leafletOutput("dialect_map", height = "600px"),
-      
-      # Data table showing variants
-      DT::dataTableOutput("variant_table")
-    )
+      # Right column containing main panel
+      div(class = "col-sm-8",
+          # Leaflet map
+          leafletOutput("dialect_map", height = "600px"),
+          
+          # Data table showing variants
+          DT::dataTableOutput("variant_table")
+      )
   )
 )
 
