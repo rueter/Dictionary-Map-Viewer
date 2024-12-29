@@ -1,23 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: dictionary-map-viewer-test2
+  name: dictionary-map-viewer
   labels:
-    app: dictionary-map-viewer-test2
+    app: dictionary-map-viewer
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: dictionary-map-viewer-test2
+      app: dictionary-map-viewer
   template:
     metadata:
       labels:
-        app: dictionary-map-viewer-test2
+        app: dictionary-map-viewer
     spec:
       securityContext:
         runAsNonRoot: true
       containers:
-      - name: dictionary-map-viewer-test2
+      - name: dictionary-map-viewer
         image: your-image-name
         ports:
         - name: http
@@ -32,9 +32,9 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: dictionary-map-viewer-test2
+  name: dictionary-map-viewer
   labels:
-    app: dictionary-map-viewer-test2
+    app: dictionary-map-viewer
 spec:
   ports:
   - name: 8080-tcp
@@ -42,21 +42,21 @@ spec:
     protocol: TCP
     targetPort: 8080
   selector:
-    app: dictionary-map-viewer-test2
+    app: dictionary-map-viewer
 ---
 apiVersion: route.openshift.io/v1
 kind: Route
 metadata:
-  name: dictionary-map-viewer-test2
+  name: dictionary-map-viewer
   labels:
-    app: dictionary-map-viewer-test2
+    app: dictionary-map-viewer
 spec:
   host: dictionary-map-viewer-test2-uralic-amazonian-collaboration.2.rahtiapp.fi
   port:
     targetPort: 8080-tcp
   to:
     kind: Service
-    name: dictionary-map-viewer-test2
+    name: dictionary-map-viewer
     weight: 100
   tls:
     termination: edge
