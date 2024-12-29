@@ -1,10 +1,5 @@
 FROM rocker/shiny:4.3.2
 
-# Install required system packages
-RUN apt-get update && apt-get install -y \
-    gettext-base \
-    && rm -rf /var/lib/apt/lists/*
-
 # Install R packages
 RUN R -e "install.packages(c('shiny', 'leaflet', 'dplyr', 'tidyr', 'readr', 'stringr', 'xml2'), repos='https://cloud.r-project.org/', dependencies=TRUE)"
 
@@ -18,8 +13,10 @@ RUN chmod -R 777 /srv/shiny-server/ && \
     chmod -R 777 /etc/shiny-server/ && \
     chmod -R 777 /opt/shiny-server/
 
-# Create shiny-server.conf that works with arbitrary UIDs
-RUN echo 'run_as :ENV_SHINY_USER:;\n\
+# Create run script that will generate the config at runtime
+RUN echo '#!/bin/bash\n\
+USER_ID=$(id -u)\n\
+echo "run_as $USER_ID;\n\
 server {\n\
   listen 3838;\n\
   location / {\n\
@@ -27,10 +24,9 @@ server {\n\
     log_dir /var/log/shiny-server;\n\
     directory_index on;\n\
   }\n\
-}' > /etc/shiny-server/shiny-server.conf
-
-# Create run script
-RUN echo '#!/bin/bash\n\nexport ENV_SHINY_USER=$(id -u)\nenvsubst < /etc/shiny-server/shiny-server.conf > /etc/shiny-server/shiny-server.conf.tmp\nmv /etc/shiny-server/shiny-server.conf.tmp /etc/shiny-server/shiny-server.conf\n\nexec /usr/bin/shiny-server' > /usr/bin/run-shiny.sh && \
+}" > /etc/shiny-server/shiny-server.conf\n\
+\n\
+exec /usr/bin/shiny-server' > /usr/bin/run-shiny.sh && \
     chmod +x /usr/bin/run-shiny.sh
 
 EXPOSE 3838
