@@ -1,5 +1,10 @@
 FROM rocker/shiny:4.3.2
 
+# Install required system packages
+RUN apt-get update && apt-get install -y \
+    gettext-base \
+    && rm -rf /var/lib/apt/lists/*
+
 # Install R packages
 RUN R -e "install.packages(c('shiny', 'leaflet', 'dplyr', 'tidyr', 'readr', 'stringr', 'xml2'), repos='https://cloud.r-project.org/', dependencies=TRUE)"
 
