@@ -24,5 +24,9 @@ server {\n\
 \n\
 exec /usr/bin/shiny-server' > /usr/bin/run-shiny.sh && \
     chmod +x /usr/bin/run-shiny.sh
+
+# Set user for OpenShift compatibility
+USER 1000690000
+
 EXPOSE 8080
 CMD ["/usr/bin/run-shiny.sh"]
