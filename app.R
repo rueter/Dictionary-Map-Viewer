@@ -168,8 +168,8 @@ ui <- fluidPage(
           # Additional info panel
           div(class = "well",
               HTML("<h4>Additional Information</h4>
-                   <p>This application has been developed by Niko Partanen and Jack Rueter. The application can be extended to display geographic variants of different terms on different languages.</p>
-                   <p>It is part of the Finno-Ugrian Society's digitization work with the goal of making dialect dictionaries on Uralic languages more accessible online. It also connects to the Uralic-Amazonian collaboration coordinated by professors Pirjo Kristiina Virtanen (University of Helsinki), Sidney Facundes (Federal University of Pará (UFPA), Belém) and Thiago Cardoso Mota (Federal University of Amazonas, Manaus).</p>")
+                   <p>This application has been developed by Niko Partanen and Jack Rueter. The application can be extended to display geographic variants of different terms in different languages.</p>
+                   <p>It is part of the Finno-Ugrian Society's digitization work with the goal of making dialect dictionaries of Uralic languages more accessible online. It also connects to the Uralic-Amazonian collaboration coordinated by professors Pirjo Kristiina Virtanen (University of Helsinki), Sidney Facundes (Federal University of Pará (UFPA), Belém) and Thiago Cardoso Mota (Federal University of Amazonas, Manaus).</p>")
           )
       ),
       
