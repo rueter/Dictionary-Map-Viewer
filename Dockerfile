@@ -7,12 +7,13 @@ RUN R -e "install.packages(c('shiny', 'leaflet', 'dplyr', 'tidyr', 'readr', 'str
 COPY app.R /srv/shiny-server/
 
 # Set up permissions for OpenShift
-RUN chgrp -R 0 /srv/shiny-server/ /var/lib/shiny-server/ /var/log/shiny-server/ /etc/shiny-server/ /opt/shiny-server/ && \
-    chmod -R g=u /srv/shiny-server/ /var/lib/shiny-server/ /var/log/shiny-server/ /etc/shiny-server/ /opt/shiny-server/
+RUN mkdir -p /var/log/shiny-server && \
+    chown -R 1000690000:0 /srv/shiny-server/ /var/lib/shiny-server/ /var/log/shiny-server/ /etc/shiny-server/ && \
+    chmod -R g+rwX /srv/shiny-server/ /var/lib/shiny-server/ /var/log/shiny-server/ /etc/shiny-server/
 
 # Create run script that will generate the config at runtime
 RUN echo '#!/bin/bash\n\
-echo "run_as shiny;\n\
+echo "run_as 1000690000;\n\
 server {\n\
   listen 8080;\n\
   location / {\n\
