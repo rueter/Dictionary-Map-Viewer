@@ -33,6 +33,15 @@ ENV TZ="Europe/Helsinki" \
     PKG_RSTUDIO_VERSION=2023.09.1+494 \
     PKG_SHINY_VERSION=1.5.21.1012
 
+# Create necessary directories and set up initial permissions
+RUN mkdir -p /home/rstudio-server && \
+    mkdir -p /tmp/downloaded_packages && \
+    mkdir -p /var/run/rstudio-server && \
+    mkdir -p /var/lib/rstudio-server && \
+    mkdir -p /var/log/rstudio && \
+    mkdir -p /var/log/shiny-server && \
+    mkdir -p /srv/shiny-server
+
 # Install R packages one at a time to manage memory better
 RUN R -e 'install.packages("shiny", repos="https://cloud.r-project.org/")' && \
     R -e 'install.packages("rmarkdown", repos="https://cloud.r-project.org/")' && \
@@ -51,18 +60,35 @@ COPY shiny-server.conf /etc/shiny-server/shiny-server.conf
 COPY app.R /srv/shiny-server/
 COPY start.sh /usr/local/bin/start.sh
 
-# Set up permissions
-RUN mkdir -p /var/log/shiny-server && \
-    chown rstudio-server:rstudio-server /var/log/shiny-server && \
-    chmod go+w -R /var/log/shiny-server /usr/local/lib/R /srv /var/lib/shiny-server && \
+# Set permissions for all directories
+RUN chown -R rstudio-server:rstudio-server \
+    /home/rstudio-server \
+    /tmp/downloaded_packages \
+    /var/run/rstudio-server \
+    /var/lib/rstudio-server \
+    /var/log/rstudio \
+    /var/log/shiny-server \
+    /srv/shiny-server && \
+    chmod -R go+rwX \
+    /home \
+    /home/rstudio-server \
+    /tmp/downloaded_packages \
+    /var/run/rstudio-server \
+    /var/lib/rstudio-server \
+    /var/log/rstudio \
+    /var/log/shiny-server \
+    /srv/shiny-server \
+    /usr/local/lib/R && \
     chmod ugo+rwx -R /usr/lib/rstudio-server/www && \
     echo 'r-libs-user=~/R/library' >>/etc/rstudio/rsession.conf && \
     echo "R_LIBS=\${R_LIBS-'/home/rstudio-server/R/library'}" >/usr/local/lib/R/etc/Renviron.site
 
-# Verify installation and set final permissions
+# Verify installation
 RUN rstudio-server verify-installation
-RUN chmod -R go+rwX /home /home/rstudio-server /tmp/downloaded_packages /var/run/rstudio-server /var/lib/rstudio-server /var/log/rstudio && \
-    rm -f /var/lib/rstudio-server/rstudio-os.sqlite /var/run/rstudio-server/rstudio-rsession/rstudio-server-d.pid
+
+# Clean up any leftover files
+RUN rm -f /var/lib/rstudio-server/rstudio-os.sqlite \
+    /var/run/rstudio-server/rstudio-rsession/rstudio-server-d.pid || true
 
 USER rstudio-server
 WORKDIR $HOME
