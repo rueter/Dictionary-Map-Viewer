@@ -4,11 +4,7 @@ ENV RSTUDIO_VERSION=2023.09.1+494
 ENV PANDOC_VERSION=default
 ENV PATH=/usr/lib/rstudio-server/bin:$PATH
 
-# Install RStudio and Shiny Server
-RUN /rocker_scripts/install_rstudio.sh
-RUN /rocker_scripts/install_shiny_server.sh
-
-# Install system dependencies
+# Install system dependencies first
 RUN apt-get update && apt-get upgrade -y && apt-get install --no-install-recommends -y \
     apt-utils \
     libnss-wrapper \
@@ -37,6 +33,15 @@ ENV TZ="Europe/Helsinki" \
     PKG_RSTUDIO_VERSION=2023.09.1+494 \
     PKG_SHINY_VERSION=1.5.21.1012
 
+# Install R packages one at a time to manage memory better
+RUN R -e 'install.packages("shiny", repos="https://cloud.r-project.org/")' && \
+    R -e 'install.packages("rmarkdown", repos="https://cloud.r-project.org/")' && \
+    R -e 'install.packages("shinythemes", repos="https://cloud.r-project.org/")'
+
+# Install RStudio and Shiny Server after R packages
+RUN /rocker_scripts/install_rstudio.sh
+RUN /rocker_scripts/install_shiny_server.sh
+
 # Install Tini
 ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /sbin/tini
 RUN chmod +x /sbin/tini
@@ -46,10 +51,8 @@ COPY shiny-server.conf /etc/shiny-server/shiny-server.conf
 COPY app.R /srv/shiny-server/
 COPY start.sh /usr/local/bin/start.sh
 
-# Install R packages and set up permissions
-RUN install2.r -e shiny rmarkdown shinythemes shinydashboard \
-    leaflet dplyr tidyr readr stringr xml2 && \
-    mkdir -p /var/log/shiny-server && \
+# Set up permissions
+RUN mkdir -p /var/log/shiny-server && \
     chown rstudio-server:rstudio-server /var/log/shiny-server && \
     chmod go+w -R /var/log/shiny-server /usr/local/lib/R /srv /var/lib/shiny-server && \
     chmod ugo+rwx -R /usr/lib/rstudio-server/www && \
