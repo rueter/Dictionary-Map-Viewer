@@ -14,7 +14,6 @@ spec:
       labels:
         app: dictionary-map-viewer-test2
     spec:
-      securityContext: {}  # Remove pod-level security context
       containers:
       - name: dictionary-map-viewer-test2
         image: your-image-name
@@ -37,7 +36,6 @@ spec:
         securityContext:
           allowPrivilegeEscalation: false
           runAsNonRoot: true
-          runAsUser: 1000690000
           capabilities:
             drop:
             - ALL
