@@ -33,9 +33,8 @@ ENV TZ="Europe/Helsinki" \
     PKG_RSTUDIO_VERSION=2023.09.1+494 \
     PKG_SHINY_VERSION=1.5.21.1012
 
-# Create necessary directories and set up initial permissions
+# Create necessary directories
 RUN mkdir -p /home/rstudio-server && \
-    mkdir -p /tmp/downloaded_packages && \
     mkdir -p /var/run/rstudio-server && \
     mkdir -p /var/lib/rstudio-server && \
     mkdir -p /var/log/rstudio && \
@@ -43,7 +42,9 @@ RUN mkdir -p /home/rstudio-server && \
     mkdir -p /srv/shiny-server
 
 # Install R packages one at a time to manage memory better
-RUN R -e 'install.packages("shiny", repos="https://cloud.r-project.org/")' && \
+RUN mkdir -p /tmp/downloaded_packages && \
+    chown -R rstudio-server:rstudio-server /tmp/downloaded_packages && \
+    R -e 'install.packages("shiny", repos="https://cloud.r-project.org/")' && \
     R -e 'install.packages("rmarkdown", repos="https://cloud.r-project.org/")' && \
     R -e 'install.packages("shinythemes", repos="https://cloud.r-project.org/")'
 
@@ -61,24 +62,25 @@ COPY app.R /srv/shiny-server/
 COPY start.sh /usr/local/bin/start.sh
 
 # Set permissions for all directories
-RUN chown -R rstudio-server:rstudio-server \
-    /home/rstudio-server \
-    /tmp/downloaded_packages \
-    /var/run/rstudio-server \
-    /var/lib/rstudio-server \
-    /var/log/rstudio \
-    /var/log/shiny-server \
-    /srv/shiny-server && \
+RUN mkdir -p /tmp/downloaded_packages && \
+    chown -R rstudio-server:rstudio-server \
+        /home/rstudio-server \
+        /var/run/rstudio-server \
+        /var/lib/rstudio-server \
+        /var/log/rstudio \
+        /var/log/shiny-server \
+        /srv/shiny-server \
+        /tmp/downloaded_packages && \
     chmod -R go+rwX \
-    /home \
-    /home/rstudio-server \
-    /tmp/downloaded_packages \
-    /var/run/rstudio-server \
-    /var/lib/rstudio-server \
-    /var/log/rstudio \
-    /var/log/shiny-server \
-    /srv/shiny-server \
-    /usr/local/lib/R && \
+        /home \
+        /home/rstudio-server \
+        /var/run/rstudio-server \
+        /var/lib/rstudio-server \
+        /var/log/rstudio \
+        /var/log/shiny-server \
+        /srv/shiny-server \
+        /usr/local/lib/R \
+        /tmp/downloaded_packages && \
     chmod ugo+rwx -R /usr/lib/rstudio-server/www && \
     echo 'r-libs-user=~/R/library' >>/etc/rstudio/rsession.conf && \
     echo "R_LIBS=\${R_LIBS-'/home/rstudio-server/R/library'}" >/usr/local/lib/R/etc/Renviron.site
