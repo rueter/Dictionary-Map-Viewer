@@ -44,7 +44,7 @@ ENV TZ="Europe/Helsinki" \
     PKG_RSTUDIO_VERSION=2023.09.1+494 \
     PKG_SHINY_VERSION=1.5.21.1012
 
-ADD https\://github\.com/krallin/tini/releases/download/</span>{TINI_VERSION}/tini /sbin/tini
+ADD https://github.com/krallin/tini/releases/download/v0.19.0/tini-static-amd64 /sbin/tini
 RUN chmod +x /sbin/tini
 
 COPY shiny-server.conf /etc/shiny-server/shiny-server.conf
