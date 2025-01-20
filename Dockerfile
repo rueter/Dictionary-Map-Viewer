@@ -33,17 +33,17 @@ strace \\
 mlocate \\
 nano && \\
 apt\-get clean && rm \-rf /var/lib/apt/lists/\*
-\# Setup various variables
-ENV TZ\="Europe/Helsinki" \\
-USERNAME\="rstudio\-server" \\
-HOME\="/home/" \\
-TINI\_VERSION\=v0\.19\.0 \\
-APP\_UID\=999 \\
-APP\_GID\=999 \\
-PKG\_R\_VERSION\=4\.3\.1 \\
-PKG\_RSTUDIO\_VERSION\=2023\.09\.1\+494 \\
-PKG\_SHINY\_VERSION\=1\.5\.21\.1012
-\# Setup Tini, as S6 does not work when run as non\-root users
+
+ENV TZ="Europe/Helsinki" \
+    USERNAME="rstudio-server" \
+    HOME="/home/" \
+    TINI_VERSION=v0.19.0 \
+    APP_UID=999 \
+    APP_GID=999 \
+    PKG_R_VERSION=4.3.1 \
+    PKG_RSTUDIO_VERSION=2023.09.1+494 \
+    PKG_SHINY_VERSION=1.5.21.1012
+
 ADD https\://github\.com/krallin/tini/releases/download/</span>{TINI_VERSION}/tini /sbin/tini
 RUN chmod +x /sbin/tini
 
