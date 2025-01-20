@@ -8,13 +8,11 @@ ENV PATH=/usr/lib/rstudio-server/bin:$PATH
 # Install core utilities and debconf-utils package
 RUN apt-get update && apt-get install -y coreutils debconf-utils
 
-# Install dependencies from tidyverse repo
-RUN apt-get update
-RUN apt-get install -y wget
-RUN wget https://raw.githubusercontent.com/tidyverse/tidyverse/master/installation.R
+# Install tidyverse 
+RUN R -e "install.packages('tidyverse')"
 
-# Install tidyverse packages
-RUN Rscript installation.R --deps TRUE
+RUN /rocker_scripts/install_rstudio.sh
+RUN /rocker_scripts/install_shiny_server.sh
 
 RUN /rocker_scripts/install_rstudio.sh
 RUN /rocker_scripts/install_shiny_server.sh
