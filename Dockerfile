@@ -3,9 +3,13 @@ FROM rocker/r-ver:4.3.2
 ENV RSTUDIO_VERSION=2023.09.1+494
 ENV PANDOC_VERSION=default
 
-ENV PATH=/usr/lib/rstudio-server/bin:<span class="math-inline">PATH
-RUN /rocker\_scripts/install\_rstudio\.sh
-RUN /rocker\_scripts/install\_shiny\_server\.sh
+ENV PATH=/usr/lib/rstudio-server/bin:$PATH
+
+# Install core utilities and debconf-utils package
+RUN apt-get update && apt-get install -y coreutils debconf-utils
+
+RUN /rocker_scripts/install_rstudio.sh
+RUN /rocker_scripts/install_shiny_server.sh
 RUN apt\-get update && apt\-get upgrade \-y && apt\-get install \-\-no\-install\-recommends \-y \\
 apt\-utils \\
 libnss\-wrapper \\
