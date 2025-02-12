@@ -2,7 +2,7 @@
 # This is a Shiny web application. You can run the application by clicking
 # the 'Run App' button above when the project is opened in RStudio.
 #
-# This app has been developed by Niko Partanen and Jack Rueter. 
+# This app has been developed by Niko Partanen and Jack Rueter.
 
 library(shiny)
 library(dplyr)
@@ -40,32 +40,32 @@ row_counter <- 1
 # Process each entry
 for(i in seq_along(entries)) {
   entry <- entries[i]
-  
+
   # Get the base lemmas - modified to get the id attribute and parse it
   myv_l <- xml_find_first(entry, ".//lb[@iso_lang='myv']/l")
   mdf_l <- xml_find_first(entry, ".//lb[@iso_lang='mdf']/l")
-  
+
   lemma_myv <- if(!is.na(myv_l)) {
     id_str <- xml_attr(myv_l, "id")
     # Extract the base form from the id (assuming format like "E:1:N+Sg+Nom+Indef:кедь")
     strsplit(id_str, ":")[[1]][length(strsplit(id_str, ":")[[1]])]
   } else NA
-  
+
   lemma_mdf <- if(!is.na(mdf_l)) {
     id_str <- xml_attr(mdf_l, "id")
     strsplit(id_str, ":")[[1]][length(strsplit(id_str, ":")[[1]])]
   } else NA
-  
+
   # Get translations
   rus_trans <- safe_text(xml_find_first(entry, ".//tg[@iso_lang='rus']/t"))
   deu_trans <- safe_text(xml_find_first(entry, ".//tg[@iso_lang='deu']/t"))
-  
+
   # Process Erzya (myv) variants
   myv_variants <- xml_find_all(entry, ".//lb[@iso_lang='myv']/l_var")
   for(variant in myv_variants) {
     orig_var <- xml_attr(variant, "orig_var")
     geo_nodes <- xml_find_all(variant, ".//geoU")
-    
+
     for(geo in geo_nodes) {
       location <- xml_attr(geo, "orig_geo")
       if(!is.na(location) && location != "") {
@@ -83,13 +83,13 @@ for(i in seq_along(entries)) {
       }
     }
   }
-  
+
   # Process Moksha (mdf) variants
   mdf_variants <- xml_find_all(entry, ".//lb[@iso_lang='mdf']/l_var")
   for(variant in mdf_variants) {
     orig_var <- xml_attr(variant, "orig_var")
     geo_nodes <- xml_find_all(variant, ".//geoU")
-    
+
     for(geo in geo_nodes) {
       location <- xml_attr(geo, "orig_geo")
       if(!is.na(location) && location != "") {
@@ -154,7 +154,7 @@ df <- final_df %>%
 # UI
 ui <- fluidPage(
   titlePanel("Mordvin Dialect Map"),
-  
+
   div(class = "row",
       # Left column containing sidebarPanel and the additional info
       div(class = "col-sm-4",
@@ -172,12 +172,12 @@ ui <- fluidPage(
                    <p>It is part of the Finno-Ugrian Society's digitization work with the goal of making dialect dictionaries of Uralic languages more accessible online. It also connects to the Uralic-Amazonian collaboration coordinated by professors Pirjo Kristiina Virtanen (University of Helsinki), Sidney Facundes (Federal University of Pará (UFPA), Belém) and Thiago Cardoso Mota (Federal University of Amazonas, Manaus).</p>")
           )
       ),
-      
+
       # Right column containing main panel
       div(class = "col-sm-8",
           # Leaflet map
           leafletOutput("dialect_map", height = "600px"),
-          
+
           # Data table showing variants
           DT::dataTableOutput("variant_table")
       )
@@ -186,7 +186,7 @@ ui <- fluidPage(
 
 # Server
 server <- function(input, output, session) {
-  
+
   # Reactive filtered data based on selected German translation
   filtered_data <- reactive({
     # First get the entry_num(s) for the selected German translation
@@ -194,22 +194,22 @@ server <- function(input, output, session) {
       filter(german_translation == input$german_word) %>%
       pull(entry_num) %>%
       unique()
-    
+
     # Then get all variants for those entry numbers
     df %>%
       filter(entry_num %in% entry_nums)
   })
-  
+
   # Create the map
   output$dialect_map <- renderLeaflet({
     data <- filtered_data()
-    
+
     # Create color palette for variants
     pal <- colorFactor(
       palette = "Set3",
       domain = data$variant
     )
-    
+
     # Base map
     leaflet(data) %>%
       addTiles() %>%
@@ -233,11 +233,11 @@ server <- function(input, output, session) {
         title = "Variants"
       )
   })
-  
+
   # Create information panel
   output$variant_info <- renderUI({
     data <- filtered_data()
-    
+
     HTML(paste(
       "<h4>Word Information:</h4>",
       "<strong>Base forms:</strong>", paste(unique(data$base_form), collapse = ", "), "<br>",
@@ -247,11 +247,11 @@ server <- function(input, output, session) {
       "<strong>Languages:</strong>", paste(unique(data$language), collapse = ", ")
     ))
   })
-  
+
   # Create data table
   output$variant_table <- DT::renderDataTable({
     data <- filtered_data()
-    
+
     DT::datatable(
       data %>%
         select(base_form, variant, location, language) %>%
@@ -273,4 +273,3 @@ shinyApp(ui = ui, server = server)
 
 
 
-    
