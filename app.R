@@ -186,6 +186,19 @@ ui <- fluidPage(
 
 # Server
 server <- function(input, output, session) {
+  
+  # At the top of your app.R
+  options(shiny.error = function() {
+    cat(file=stderr(), "An error occurred:\n")
+    traceback(2)
+  })
+  
+  observe({
+    query <- parseQueryString(session$clientData$url_search)
+    if (!is.null(query[["health"]])) {
+      cat(file=stderr(), "Health check passed\n")
+    }
+  })
 
   # Reactive filtered data based on selected German translation
   filtered_data <- reactive({
