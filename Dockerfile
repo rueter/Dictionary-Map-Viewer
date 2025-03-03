@@ -60,6 +60,8 @@ RUN install2.r -e shiny rmarkdown shinythemes shinydashboard && \
 
 COPY start.sh /usr/local/bin/start.sh
 
+COPY app.R /srv/shiny-server/
+
 RUN rstudio-server verify-installation
 
 RUN chmod -R go+rwX /home /home/rstudio /tmp/downloaded_packages /var/run/rstudio-server /var/lib/rstudio-server /var/log/rstudio && \
