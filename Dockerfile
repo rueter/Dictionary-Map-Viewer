@@ -8,6 +8,14 @@ ENV PATH=/usr/lib/rstudio-server/bin:$PATH
 RUN /rocker_scripts/install_rstudio.sh
 RUN /rocker_scripts/install_shiny_server.sh
 
+# Install core utilities and debconf-utils package
+RUN apt-get update && apt-get install -y coreutils debconf-utils
+
+# Install tidyverse 
+RUN R -e "install.packages('tidyverse')"
+
+RUN R -e "install.packages(c('xml2', 'leaflet', 'DT', 'readr', 'dplyr'))"
+
 RUN apt-get update && apt-get upgrade -y && apt-get install --no-install-recommends -y \
     apt-utils \
     libnss-wrapper \
